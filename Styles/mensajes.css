@@ -1,0 +1,71 @@
+#mensajes {
+    overflow: auto;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#mensajes h4:hover {
+    cursor: pointer;
+}
+
+#mensajes img {
+    visibility: hidden;
+    position: absolute;
+    width: 20px;
+}
+
+#mensajes article {
+    width: calc(100vw - 114px);
+    padding: 0px 20px 12px 94px;
+    margin-top: 10px;
+    box-shadow: 11px 7px 21px -8px rgba(60, 39, 32, 0.95);
+}
+
+.mensaje-ageno {
+    background-color: #998880;
+    color: #5C514D;
+}
+
+.mi-mensaje {
+    background-color: #51443e;
+    color: #B2AEAE;
+}
+
+time {
+    text-align: right;
+}
+
+form {
+    display: inline-flex;
+    width: 80%;
+    height: auto;
+    margin: 2% 10%;
+}
+
+form .introduce-mensaje {
+    width: 100%;
+    height: auto;
+    border-radius: 200px 200px;
+}
+
+form .envia-mensaje {
+    border-radius: 200px 200px;
+    width: 10%;
+    text-transform: capitalize;
+    font-size: 1vw;
+    background-color: #04170F;
+    color: #4BA380;
+}
+
+form .envia-mensaje:hover {
+    background-color: #134631;
+    color: #4BA380;
+}
+
+.introduce-mensaje,
+.envia-mensaje {
+    outline: none;
+    padding-left: 1%;
+}

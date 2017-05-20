@@ -1,0 +1,74 @@
+#menu {
+    position: fixed;
+    margin: 0;
+    width: 100vw;
+    background-color: #072D6D;
+    color: whitesmoke;
+    min-width: 450px;
+}
+
+#menu .navBar {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    min-width: 450px;
+}
+
+.navBar img {
+    margin: 5px 15px;
+    width: 30px;
+    cursor: pointer;
+}
+
+#menu .botonesMenu {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    min-width: 250px;
+}
+
+.botonesMenu .opcion {
+    padding: 0 2vw;
+    transition: font-size 0.3s;
+    cursor: pointer;
+    position: relative;
+    min-width: 60px;
+}
+
+.botonesMenu .opcion:hover {
+    background-color: #C6C6C6;
+    font-size: 28px;
+}
+
+.parent {
+    z-index: 2;
+}
+
+.parent ul {
+    position: absolute;
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.parent li {
+    transition: font-size 0.3s;
+}
+
+.parent ul,
+.parent ul li {
+    padding: 0;
+    font-size: large;
+}
+
+.parent:hover ul {
+    opacity: 1;
+}
+
+.parent ul li:hover {
+    font-size: 25px;
+}

@@ -1,0 +1,23 @@
+ #home {
+     display: flex;
+     justify-content: center;
+     align-content: center;
+     background-image: url('../assets/img/background.jpg');
+     background-position: center;
+     background-size: contain;
+     color: white;
+     z-index: -1;
+     max-height: 270px;
+     margin-top: 40px;
+ }
+ 
+ header img {
+     width: 15vw;
+     height: 15vw;
+ }
+ 
+ .cabecera {
+     display: flex;
+     flex-direction: column;
+     padding-bottom: 50px;
+ }

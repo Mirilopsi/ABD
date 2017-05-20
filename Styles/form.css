@@ -1,0 +1,59 @@
+.contenedorForm {
+    position: absolute;
+    background-color: white;
+    padding: 6vh;
+    z-index: 100;
+    border: 1px solid black;
+    display: flex;
+    font-size: xx-large;
+    flex-direction: column;
+    margin: 20vh 20vw;
+    border-radius: 20px;
+}
+
+.contenedorForm form {
+    position: relative;
+    flex-direction: column;
+}
+
+label {
+    position: absolute;
+    margin: 10px;
+    transition: bottom 0s 9999999s;
+}
+
+input {
+    outline: none;
+    margin: 10px;
+    height: 4vh;
+    font-size: large;
+    border: none;
+    width: 100%;
+    border-bottom: solid 1px lightgrey;
+}
+
+.perm:active label {
+    transition: bottom;
+}
+
+.perm:hover input {
+    border-bottom: solid 1px blue;
+}
+
+.perm:active label {
+    bottom: 20px 0s;
+}
+
+form button {
+    padding: 10px;
+    border-radius: 30px;
+}
+
+@keyframes labelTransition {
+    0% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
