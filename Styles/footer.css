@@ -1,0 +1,26 @@
+footer {
+    background-color: #072D6D;
+    color: whitesmoke;
+    align-content: rigth;
+    position: absolute;
+    width: 99vw;
+}
+
+footer table {
+    float: right;
+    width: 20%;
+}
+
+footer tr {
+    margin: 12px 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0 12px;
+    border-right: 1px solid white;
+}
+
+footer p {
+    font-size: 13px;
+}

@@ -10,7 +10,6 @@
 #menu .navBar {
     list-style: none;
     display: flex;
-    justify-content: flex-start;
     min-width: 450px;
 }
 
@@ -18,6 +17,11 @@
     margin: 5px 15px;
     width: 30px;
     cursor: pointer;
+    transition: width 0.3s;
+}
+
+.navBar img:hover {
+    width: 35px;
 }
 
 #menu .botonesMenu {
@@ -49,7 +53,7 @@
     position: absolute;
     margin-top: 15px;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.4s;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

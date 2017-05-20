@@ -9,6 +9,7 @@
      z-index: -1;
      max-height: 270px;
      margin-top: 40px;
+     margin-bottom: 8em;
  }
  
  header img {
@@ -20,4 +21,18 @@
      display: flex;
      flex-direction: column;
      padding-bottom: 50px;
+     max-width: 270px;
+ }
+ 
+ main h2 {
+     font-size: 35px;
+     margin: 0 2em;
+     background-color: #B8BABF;
+     border-radius: 20px;
+ }
+ 
+ article {
+     padding-bottom: 2em;
+     text-align: center;
+     margin: 3em 13vw;
  }

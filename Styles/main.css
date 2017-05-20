@@ -1,18 +1,46 @@
 body {
     margin: 0;
-    display: flex;
-    flex-direction: column;
     min-width: 550px;
+    height: 100vh;
     min-height: 550px;
+    position: absolute;
+    overflow-x: hidden;
 }
 
 h1 {
     font-family: 'Barrio', cursive;
-    font-size: x-large;
     text-align: center;
 }
 
+p,
+h3 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
 li {
-    font-family: 'Amatic SC', cursive;
     font-size: x-large;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #032051;
+}
+
+li,
+h2,
+h4,
+h5 {
+    font-family: 'Amatic SC', cursive;
+}
+
+strong {
+    color: #032051;
+    font-style: italic;
 }
