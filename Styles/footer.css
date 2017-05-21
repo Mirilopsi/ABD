@@ -1,9 +1,9 @@
 footer {
-    background-color: #072D6D;
-    color: whitesmoke;
+    color: #0F48A9;
     align-content: rigth;
     position: absolute;
     width: 99vw;
+    background-color: whitesmoke;
 }
 
 footer table {
@@ -18,7 +18,7 @@ footer tr {
 footer ul {
     list-style: none;
     padding: 0 12px;
-    border-right: 1px solid white;
+    border-right: 1px solid #B8BABF;
 }
 
 footer p {

@@ -37,16 +37,13 @@
     transition: font-size 0.3s;
     cursor: pointer;
     position: relative;
+    z-index: 3;
     min-width: 60px;
 }
 
 .botonesMenu .opcion:hover {
     background-color: #C6C6C6;
     font-size: 28px;
-}
-
-.parent {
-    z-index: 2;
 }
 
 .parent ul {
@@ -57,6 +54,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding: 12px;
+    border-radius: 20px 0px 20px 20px;
 }
 
 .parent li {
@@ -65,12 +64,12 @@
 
 .parent ul,
 .parent ul li {
-    padding: 0;
     font-size: large;
 }
 
 .parent:hover ul {
     opacity: 1;
+    background-color: #072D6D;
 }
 
 .parent ul li:hover {

@@ -5,7 +5,6 @@
      background-image: url('../assets/img/background.jpg');
      background-position: center;
      background-size: contain;
-     color: white;
      z-index: -1;
      max-height: 270px;
      margin-top: 40px;
@@ -15,6 +14,7 @@
  header img {
      width: 15vw;
      height: 15vw;
+     z-index: 2;
  }
  
  .cabecera {
@@ -22,6 +22,10 @@
      flex-direction: column;
      padding-bottom: 50px;
      max-width: 270px;
+ }
+ 
+ #home h1 {
+     color: whitesmoke;
  }
  
  main h2 {
