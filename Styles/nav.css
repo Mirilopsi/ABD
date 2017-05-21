@@ -2,9 +2,19 @@
     position: fixed;
     margin: 0;
     width: 100vw;
-    background-color: #072D6D;
     color: whitesmoke;
     min-width: 450px;
+    z-index: 3;
+}
+
+.navBar:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: -100;
 }
 
 #menu .navBar {
@@ -42,7 +52,6 @@
 }
 
 .botonesMenu .opcion:hover {
-    background-color: #C6C6C6;
     font-size: 28px;
 }
 
@@ -54,8 +63,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 12px;
-    border-radius: 20px 0px 20px 20px;
+    padding: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0px 20px 20px 20px;
 }
 
 .parent li {
@@ -69,7 +79,6 @@
 
 .parent:hover ul {
     opacity: 1;
-    background-color: #072D6D;
 }
 
 .parent ul li:hover {

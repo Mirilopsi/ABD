@@ -5,11 +5,14 @@ body {
     min-height: 550px;
     position: absolute;
     overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
 h1 {
     font-family: 'Barrio', cursive;
     text-align: center;
+    font-size: 10vh;
 }
 
 p,
