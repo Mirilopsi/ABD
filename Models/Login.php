@@ -4,7 +4,7 @@ require ('Users.php');
 $nameUser = $_POST['user'];
 $pass = $_POST['userPass'];
 
-$users = new Users();
+$users = new ListaUsuarios();
 
 $seed =  $nameUser.'%$';
 
