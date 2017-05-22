@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<?php include('Common/nav.php'); ?>
+<?php include('Views/Common/nav.php'); ?>
 
 
     <header id="home">
@@ -42,7 +42,7 @@
         </article>
 
     </main>
-    <?php include('Common/footer.html');?>
+    <?php include('Views/Common/footer.html');?>
 </body>
 
 </html>
