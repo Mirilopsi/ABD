@@ -9,12 +9,13 @@
     height: 25vw;
     width: 15vw;
     border: 2px solid black;
-    overflow: auto;
     transition: height 0.3s, width 0.3s, box-shadow 0.3s;
     min-width: 210px;
     min-height: 340px;
     overflow: hidden;
     overflow-wrap: normal;
+    margin: 15px;
+    border-radius: 20px;
 }
 
 .mensaje:hover {
@@ -29,7 +30,6 @@
     height: 9vh;
     text-align: -webkit-center;
     padding-top: 1vh;
-    margin-bottom: 5em;
 }
 
 .mensaje a {
@@ -48,7 +48,7 @@
 }
 
 .cuerpo-mensaje {
-    margin-top: 50px;
+    margin-top: 32px;
     padding: 0 20px;
 }
 
