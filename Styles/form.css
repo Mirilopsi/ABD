@@ -1,0 +1,44 @@
+.formulario {
+    position: absolute;
+    background-color: lightcoral;
+    border: 1px solid;
+    border-radius: 12px;
+    width: 60%;
+    left: 20vw;
+    z-index: 5;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+}
+
+form input[type="text"],
+textarea {
+    margin-bottom: 2em;
+    border-radius: 6px;
+    padding: 5px;
+    outline: none;
+}
+
+textarea {
+    max-height: 200px;
+    max-width: 99%;
+}
+
+.botones-form {
+    display: inline-block;
+    text-align: center;
+}
+
+form input[type="submit"],
+button {
+    width: 80px;
+    padding: 5px 0px;
+    border-radius: 12px;
+}
+
+form label {
+    font-size: large;
+}

@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="Assets/logo/favicon.png">
     <link href="../Styles/cabeceras.css" rel="stylesheet">
     <link href="../Styles/mensajeria.css" rel="stylesheet">
+    <link href="../Styles/form.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="Assets/logo/favicon.png">
 
 </head>
@@ -30,6 +31,25 @@
         $mensajes = new VistaMensajes();
         $mensajes->mostrarTodosMensajes();
     ?>
+    
+    <div id="nuevo-mensaje" class = "formulario">
+        <form method="post" action="../GestionForms/FormNuevoMensaje.php">
+            <label for="titulo">titulo</label>
+            <input type="text" name ="titulo" required>
+
+            <label for="asunto">asunto</label>
+            <input type="text" name ="asunto" required>
+
+            <label for="mensaje">mensaje</label>
+            <textarea name="message" cols="30" rows="10" required></textarea>
+            <div class="botones-form">
+                <input type ="submit" name="submit" >
+                <button name="cancelar" >cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <button id="boton-nuevo"><label><img src="../Assets/img/ic_message_white_24px.svg"/>Nuevo</label></button>
 
 </main>
 

@@ -3,6 +3,7 @@ footer {
     position: absolute;
     width: 100vw;
     background-color: whitesmoke;
+    bottom: 0;
 }
 
 footer p {

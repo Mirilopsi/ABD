@@ -1,65 +1,91 @@
-#lista-mensajes {
-    display: flex;
-    height: calc(75vh - 80px);
-    width: 100%;
-    padding: 40px;
-}
-
-.mensaje {
-    height: 25vw;
-    width: 15vw;
-    border: 2px solid black;
-    transition: height 0.3s, width 0.3s, box-shadow 0.3s;
-    min-width: 210px;
-    min-height: 340px;
-    overflow: hidden;
-    overflow-wrap: normal;
-    margin: 15px;
-    border-radius: 20px;
-}
-
-.mensaje:hover {
-    height: 26vw;
-    width: 16vw;
-    box-shadow: 0px 15px 58px #5a5a5a;
-}
-
-.cabecera-mensaje {
-    background-color: #1c2225;
-    width: 100%;
-    height: 9vh;
-    text-align: -webkit-center;
-    padding-top: 1vh;
-}
-
-.mensaje a {
-    margin-top: 10px;
-}
-
-.perfil-usuario {
-    background-image: url(../Assets/img/perfil.png);
-    background-size: cover;
-    width: 8vw;
-    height: 8vw;
-    min-width: 40px;
-    min-height: 40px;
-    border: 5px solid white;
-    border-radius: 100%;
-}
-
-.cuerpo-mensaje {
-    margin-top: 32px;
-    padding: 0 20px;
-}
-
-.show {
-    position: relative;
-    left: 25vw;
-    width: 50vw;
-    height: 100vh;
-}
-
-.cabecera-mensaje img {
-    border-radius: 100%;
-    height: 104px;
-}
+    #lista-mensajes {
+        display: flex;
+        height: calc(75vh - 80px);
+        width: 100%;
+        padding: 40px;
+        position: absolute;
+    }
+    
+    .mensaje {
+        height: 25vw;
+        width: 15vw;
+        border: 2px solid lightgrey;
+        transition: height 0.3s, width 0.3s, box-shadow 0.3s;
+        margin: 15px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    
+    .mensaje:hover {
+        height: 26vw;
+        width: 16vw;
+        box-shadow: 0px 15px 58px #5a5a5a;
+    }
+    
+    .cabecera-mensaje {
+        background-color: #1c2225;
+        width: 100%;
+        height: 9vh;
+        text-align: -webkit-center;
+        padding-top: 1vh;
+        border-bottom: 2px solid lightgrey;
+        border-radius: 20px 20px 0px 0px;
+        background-size: cover;
+    }
+    
+    .cabecera-mensaje h2 {
+        opacity: 0;
+        transition: opacity 0.4s, background-color 0.4s;
+    }
+    
+    .mensaje:hover h2 {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .mensaje a {
+        margin-top: 10px;
+    }
+    
+    .cuerpo-mensaje {
+        padding: 0px 11px;
+        display: inline-block;
+        width: 82%;
+        height: 66%;
+        overflow: hidden;
+        overflow-wrap: break-word;
+    }
+    
+    .show {
+        position: relative;
+        left: 25vw;
+        width: 50vw;
+        height: 100vh;
+    }
+    
+    .cabecera-mensaje img {
+        border-radius: 100%;
+        height: 104px;
+    }
+    
+    #boton-nuevo {
+        height: 70px;
+        width: 70px;
+        background-color: lightsalmon;
+        border-radius: 100%;
+        cursor: pointer;
+        outline: none;
+        transition: background-color 0.3s, width 0.3s, height 0.3s;
+        position: absolute;
+        right: 15%;
+        bottom: 10%;
+        color: white;
+    }
+    
+    #boton-nuevo:hover {
+        background-color: lightseagreen;
+        width: 66px;
+        height: 66px;
+    }
+    
+    #nuevo-mensaje {}
