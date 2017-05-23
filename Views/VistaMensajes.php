@@ -27,7 +27,7 @@ class VistaMensajes{
                     <img src="../Assets/img/'.$usuario->getFoto().'">
                 </a>
                 <div class = "cuerpo-mensaje">
-                    <h3>'.$mensaje->getTitulo().'h3>
+                    <h3>'.$mensaje->getTitulo().'<h3>
                     <h4>'.$mensaje->getAsunto().'</h4>
                     <p>'.$mensaje->getCuerpo().'</p>
                     

@@ -14,7 +14,7 @@
 
 <nav>
     <?php 
-        // include('Common/nav.php'); 
+        include('Common/nav.php'); 
     ?>
 </nav>
 
@@ -38,17 +38,3 @@
 </footer>
 
 </body>
-
-
-<!--<article class = "mensaje" >
-    <div class="cabecera-mensaje">
-        <a href="perfil-usuario"><div class = "perfil-usuario" ></div></a>
-    </div>
-    
-    <div class = "cuerpo-mensaje">
-        <h3>Título del mensaje</h3>
-        <h4>Asunto del mensaje</h4>
-
-        <p>Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur adipisicing elit. In eaque nisi officia, fuga minus! Rerum rem officiis eos vitae maxime, illo, eaque ipsum? Sint, optio officiis. sit amet, consectetur adipisicing elit. Animi non accusantium enim, vel excepturi? In?</p>
-    </div>
-</article>-->
