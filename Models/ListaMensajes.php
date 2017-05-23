@@ -17,7 +17,7 @@ class ListaMensajes{
                     new mensaje($mensaje[$i]['id'], $mensaje[$i]['emisor'], 
                     $mensaje[$i]['receptor'], $mensaje[$i]['titulo'],
                     $mensaje[$i]['asunto'], $mensaje[$i]['cuerpo'],
-                    $mensaje[$i]['fecha'], $mensaje[$i]['visto']));
+                    $mensaje[$i]['fecha']));
         }
 
         return $listaMensajes;

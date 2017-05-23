@@ -9,9 +9,8 @@ class Mensaje{
     private $asunto;
     private $cuerpo;
     private $fecha;
-    private $visto;
 
-    function Mensaje($id, $emisor, $receptor,$titulo, $asunto, $cuerpo, $fecha, $visto){
+    function Mensaje($id, $emisor, $receptor,$titulo, $asunto, $cuerpo, $fecha){
         $this->id = $id;
         $this->emisor = $emisor;
         $this->receptor = $receptor;
@@ -19,7 +18,6 @@ class Mensaje{
         $this->asunto = $asunto;
         $this->cuerpo = $cuerpo;
         $this->fecha = $fecha;
-        $this->visto = $visto;
     }
 
     public function getMensajeId(){
@@ -42,9 +40,6 @@ class Mensaje{
     }
     public function getFecha(){
         return $this->fecha;
-    }
-    public function getMensajeVisto(){
-        return $this->visto;
     }
 
 }
