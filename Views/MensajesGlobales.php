@@ -2,12 +2,12 @@
 <html>
 
 <head>
+    <title>Mensajes Globales</title>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" sizes="32x32" href="Assets/logo/favicon.png">
     <link href="../Styles/cabeceras.css" rel="stylesheet">
     <link href="../Styles/mensajeria.css" rel="stylesheet">
     <link href="../Styles/form.css" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="Assets/logo/favicon.png">
 
 </head>
 

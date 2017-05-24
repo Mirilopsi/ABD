@@ -17,8 +17,6 @@
 
 <body>
 <?php include('Views/Common/nav.php'); ?>
-
-
     <header id="home">
         <div class="cabecera">
             <img src="Assets/logo/logoNubes.gif" alt="logo music now!">
@@ -29,8 +27,6 @@
     <main>
         <h2>¿Qué es?</h2>
         <article>
-
-
             <h3>¿Eres un apasionado de la música pero tus amigos no?</h3>
             <h3>¿Estas cansado de estar en un páramo musical?</h3>
             <h3>¿Quieres conocer nuevos grupos o fardar de lo fan que eres con otros melómanos?</h3>

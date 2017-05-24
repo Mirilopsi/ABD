@@ -1,16 +1,17 @@
 <?php
+require('connectBD.php');
 
 class BDMensajes{
-    private $conn;
-
     function getAllMensajes(){
-         $this->conn = mysqli_connect('localhost','miriam', 'miriam', 'abd');
+        $conn = conectarBD();
 
-        // if(!$this->conn)
-        //     echo 'Error al conectar con la base de datos.';
+        if(!$conn){
+            echo 'Error al conectar con la base de datos.';
+            return null;
+        }
 
         $sql = "SELECT * FROM mensajes ";     
-        $result = $this->conn->query($sql);
+        $result = $conn->query($sql);
         $lista[] = "";
         
         if ($result->num_rows > 0) {
@@ -19,6 +20,9 @@ class BDMensajes{
         }else{
             echo '0 results';
         }
+
+        $conn->close();
+
         return $lista;	
     }
 }

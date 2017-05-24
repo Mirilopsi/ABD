@@ -1,5 +1,5 @@
 <?php
-require_once('../config/config.php');
+require_once('connectBD.php');
 class BDUsuarios{
 
 
@@ -9,10 +9,12 @@ class BDUsuarios{
     * @return $user: datos del usuario si se ha encontrado, cadena vacía en caso contrario
     **/
     function getUsuarioPorId($id){
-        
+        $conn = conectarBD();
+
+
         $sql = "SELECT * FROM usuarios WHERE id = $id";     
-        $resultado = $conn->query($sql);
-        $usuario = "";
+        $resultado = $conn->query($sql) or die ($conn->error);
+        $usuario = null;
         if ($resultado->num_rows > 0) {
             
             while($fila = $resultado->fetch_assoc()){
@@ -22,21 +24,24 @@ class BDUsuarios{
         }else{
             echo '0';
         }
+        $conn->close();
 
         return $usuario;	
     }
     
     
     /**
-    * Se encarga de obtener un usuario mediante su nombre o email de la base de datos
+    * Se encarga de obtener un usuario mediante su nombre de la base de datos
     * @param $nombre: es el nombre de usuario que queremos obtener
+    * @param $columna: atributo por el que queremos encontrar al usuario (p.ej: nombre, email..)
     * @return $user: datos del usuario si se ha encontrado, cadena vacía en caso contrario
     **/
-    function getUsuarioPorEmailNombre($nombre){
-         $conn = mysqli_connect('localhost','miriam', 'miriam', 'abd');
-        $sql = "SELECT * FROM usuarios WHERE nombre = '$nombre'";     
-        $resultado = $conn->query($sql);
-        $usuario = "";
+    function getUsuarioPorAtributo($nombre, $columna){
+        $conn = conectarBD();
+
+        $sql = "SELECT * FROM usuarios WHERE $columna = '$nombre'";     
+        $resultado = $conn->query($sql) or die ($conn->error);
+        $usuario = false;
         if ($resultado->num_rows > 0) {
             
             while($fila = $resultado->fetch_assoc()){
@@ -44,20 +49,25 @@ class BDUsuarios{
             };
 
         }else{
-            echo 'no encontrado';
+            echo 'no encontrado<br>';
         }
+        $conn->close();
 
         return $usuario;	
     }
 
+    
+    
+    
     /**
     * Se encarga de obtener una lista de usuarios 
     * @return $users: lista de usuarios si hay usuarios en la bd, cadena vacía en caso contrario
     **/
     function getAllUsuarios(){
+        $conn = conectarBD();
         
         $sql = "SELECT * FROM usuarios ";     
-        $result = $this->conn->query($sql);
+        $result = $conn->query($sql) or die ($conn->error);
         $lista[] = "";
         
         if ($result->num_rows > 0) {
@@ -69,11 +79,24 @@ class BDUsuarios{
         }else{
             echo '0 results';
         }
+        $conn->close();
 
         return $lista;	
     }
 
 
+    /**
+     * Se encarga de añadir un usuario a la bd
+     */
+     function anadirUsuario($nombre, $email, $clave){
+        $conn = conectarBD();
+
+        $sql = "INSERT INTO usuarios (id, nombre, email, clave, foto)
+                VALUES (NULL,'$nombre','$email', '$clave', NULL ) ";     
+        $result = $conn->query($sql) or die ($conn->error);
+
+        $conn->close();
+     }
     
 }
 

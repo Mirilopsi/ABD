@@ -3,6 +3,7 @@
 
 <head>
     <title></title>
+    <meta charset="utf-8">
 </head>
 
 <body>
@@ -10,23 +11,23 @@
     <!-- LOGIN -->
     <form id="login" method="post" action="../GestionForms/gestionaLogin.php">
         <label for="usuario">Nombre de usuario o email</label>
-        <input type="text" name="usuario">
+        <input type="text" name="usuario" required>
 
         <label for="clave">Contraseña</label>
-        <input type="password" name="clave">
+        <input type="password" name="clave" required>
 
         <input type="submit" name="login">
     </form>
 
     <!-- REGISTRO -->
-    <form id="registro" method="post" action="../GestionForm/gestionaRegistro.php">
+    <form id="registro" method="post" action="../GestionForms/gestionaRegistro.php">
 
         <label for="nombre">nombre</label>
-        <input type="text" name="nombre">
+        <input type="text" name="nombre" required>
         <label for="email">email</label>
-        <input type="text" name="email">
+        <input type="text" name="email" required>
         <label for="clave">contraseña</label>
-        <input type="text" name="clave">
+        <input type="text" name="clave" required>
         <input type="submit" name="registrar">
     </form>
 

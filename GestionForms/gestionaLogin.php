@@ -8,7 +8,8 @@ $claveUsuario = $_POST['clave'];
 
 $listaUsuarios = new ListaUsuarios();
 
-$usuario = $listaUsuarios->encontrarUsuarioPorEmailNombre($nombreUsuario);
+// $usuario = $listaUsuarios->encontrarUsuarioPorEmailONombre($nombreUsuario);
+$usuario = $listaUsuarios->encontrarUsuarioPorNombre($nombreUsuario);
 
 if($usuario){
 
@@ -19,7 +20,7 @@ if($usuario){
 
     if(crypt($claveUsuario, $claveEncriptar) == $usuario->getClave()){
         $_SESSION['login']=true;
-        $_SESSION['usuario']=$usuario;
+        $_SESSION['usuario']=$nombreUsuario;
         header("Location: ../index.php");
         
     }else{ 

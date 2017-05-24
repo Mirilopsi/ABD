@@ -28,7 +28,8 @@
                 <li class="opcion">
                     <?php 
                         if(isset($_SESSION['login'])){ 
-                            echo '<a href="/practicaABD/GestionForms/gestionaLogout.php">logout</a> ';
+                            $name = $_SESSION['usuario'];
+                            echo '<a href="/practicaABD/GestionForms/gestionaLogout.php">Hola '.$name.'</a> ';
                         }else{ 
                             echo '<a href="/practicaABD/Views/login.html">login</a> ';
                         } 
