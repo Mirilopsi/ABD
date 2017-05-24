@@ -41,7 +41,7 @@
             <input type="text" name ="asunto" required>
 
             <label for="mensaje">mensaje</label>
-            <textarea name="message" cols="30" rows="10" required></textarea>
+            <textarea name="message" cols="30" rows="10" -required></textarea>
             <div class="botones-form">
                 <input type ="submit" name="submit" >
                 <button name="cancelar" >cancelar</button>

@@ -1,17 +1,9 @@
 <?php
-
+require_once('../config/config.php');
 class BDUsuarios{
-    private $conn;
 
-    function BDUsuarios(){
-        $this->conn = mysqli_connect('localhost','miriam', 'miriam', 'abd');
 
-        if(!$this->conn)
-            echo 'Error al conectar con la base de datos.';
-
-    }
-
-    /**
+   /**
     * Se encarga de obtener un usuario mediante su id de la base de datos
     * @param $id: es el id de usuario que queremos obtener
     * @return $user: datos del usuario si se ha encontrado, cadena vacía en caso contrario
@@ -19,19 +11,19 @@ class BDUsuarios{
     function getUsuarioPorId($id){
         
         $sql = "SELECT * FROM usuarios WHERE id = $id";     
-        $result = $this->conn->query($sql);
-        $user = "";
-        if ($result->num_rows > 0) {
+        $resultado = $conn->query($sql);
+        $usuario = "";
+        if ($resultado->num_rows > 0) {
             
-            while($row = $result->fetch_assoc()){
-                $user = $row;
+            while($fila = $resultado->fetch_assoc()){
+                $usuario = $fila;
             };
 
         }else{
             echo '0';
         }
 
-        return $user;	
+        return $usuario;	
     }
     
     
@@ -40,22 +32,22 @@ class BDUsuarios{
     * @param $nombre: es el nombre de usuario que queremos obtener
     * @return $user: datos del usuario si se ha encontrado, cadena vacía en caso contrario
     **/
-    function getUsuarioPorNombre($nombre){
-        
-        $sql = "SELECT * FROM users WHERE nombre = '$nombre' OR mail = '$nombre'";     
-        $result = $this->conn->query($sql);
-        $user = "";
-        if ($result->num_rows > 0) {
+    function getUsuarioPorEmailNombre($nombre){
+         $conn = mysqli_connect('localhost','miriam', 'miriam', 'abd');
+        $sql = "SELECT * FROM usuarios WHERE nombre = '$nombre'";     
+        $resultado = $conn->query($sql);
+        $usuario = "";
+        if ($resultado->num_rows > 0) {
             
-            while($row = $result->fetch_assoc()){
-                $user = $row;
+            while($fila = $resultado->fetch_assoc()){
+                $usuario = $fila;
             };
 
         }else{
-            echo '0';
+            echo 'no encontrado';
         }
 
-        return $user;	
+        return $usuario;	
     }
 
     /**
@@ -64,7 +56,7 @@ class BDUsuarios{
     **/
     function getAllUsuarios(){
         
-        $sql = "SELECT * FROM users ";     
+        $sql = "SELECT * FROM usuarios ";     
         $result = $this->conn->query($sql);
         $lista[] = "";
         

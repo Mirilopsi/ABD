@@ -8,6 +8,11 @@
     <link href="Styles/main.css" rel="stylesheet">
     <link href="Styles/principal.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="Assets/logo/favicon.png">
+    <?php 
+        session_start();
+        include_once "config/config.php";
+    ?>
+    
 </head>
 
 <body>
