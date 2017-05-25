@@ -28,15 +28,15 @@ class VistaMensajes{
                 <div class = "cuerpo-mensaje">
                 
                     <h3>'.$mensaje->getTitulo().'</h3>
-                    <h4>'.$mensaje->getAsunto().'</h4>
                     <p>'.$mensaje->getCuerpo().'</p>
                     
                 </div>
                 </article>';                
+
     }
 
-    function mostrarTodosMensajes(){
-        $mensajes = $this->ListaMensajes->getMensajes();
+    function mostrarMensajesGlobales(){
+        $mensajes = $this->ListaMensajes->getMensajesGlobales();
         if($mensajes){
             $iterator = $mensajes->getIterator();
 

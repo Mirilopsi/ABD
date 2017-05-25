@@ -13,7 +13,8 @@ $valido = $listaUsuarios->comprobarLoginValido($nombreUsuario, $claveUsuario);
 
 if($valido){
         $_SESSION['login']=true;
-        $_SESSION['usuario']=$nombreUsuario;
+        $_SESSION['usuario']=$valido->getNombre();
+        $_SESSION['idUsuario']=$valido->getId();
         header("Location: ../index.php");
         
 

@@ -10,7 +10,7 @@ class ListaUsuarios{
     * @return clave encriptada mediante MD5
     **/
     function encriptarClave($clave, $nombreUsuario){
-        $claveEncriptar =  '$1$'.$nombreUsuario;
+        $claveEncriptar =  $nombreUsuario.'$1$';
 
         return crypt($clave, $claveEncriptar);
     }
@@ -21,7 +21,27 @@ class ListaUsuarios{
     * @param nombre: valor que se utiliza para encontrar al usuario (p.ej:'paco', 'manuela@email.com'..)
     * @return usuario encontrado si existe, null en caso contrario.
     **/
-    function encontrarUsuario($columna, $nombre){
+    function encontrarUsuarioPorId($id){
+        $dbUsers = new BDUsuarios();
+        $usuario = null;
+
+        if($datosUsuario = $dbUsers->getUsuarioPorId($id)){
+            
+            $usuario = new Usuario($datosUsuario['id'],$datosUsuario['nombre'],
+                                    $datosUsuario['email'],$datosUsuario['clave'],
+                                    $datosUsuario['foto'] );
+       }
+
+       return $usuario;
+    }
+
+    /**
+    * Función encargada de encontrar un usuario por atributo (nombre, email, id...);
+    * @param columna: atributo por el que se quiere encontrar al usuario. (tipo string: 'nombre', 'email'...)
+    * @param nombre: valor que se utiliza para encontrar al usuario (p.ej:'paco', 'manuela@email.com'..)
+    * @return usuario encontrado si existe, null en caso contrario.
+    **/
+    function encontrarUsuario($nombre){
         $dbUsers = new BDUsuarios();
         $usuario = null;
 
@@ -44,15 +64,14 @@ class ListaUsuarios{
     **/
     function comprobarLoginValido($nombre, $clave){
         $valido = false;
-        $dbUsers = new BDUsuarios();
-        $usuario = $dbUsers->comprobarUsuarioExistente($nombre);
+        $usuario = $this->encontrarUsuario($nombre);
 
         if($usuario){
             if($this->encriptarClave($clave, $nombre) === $usuario->getClave()){
-                $valido = true;
+                $valido = $usuario;
             }
         }
-        return $valido;
+        return $usuario;
     }
 
     /**
@@ -63,11 +82,11 @@ class ListaUsuarios{
     * @return nombreUsuario: la función devuelve el usuario logeado en caso de éxito, null en caso contrario.
     **/
     function comprobarRegistroValido($nombre, $email, $clave){
-        $valido = false;
+        $valido = null;
         if(!$usuario = $this->encontrarUsuario($nombre) &&
            !$usuario = $this->encontrarUsuario($email)){
             $this->anadirNuevoUsuario($nombre, $email, $clave);
-            $valido = true;
+                $valido = $usuario;
         }
         return $valido;
     }

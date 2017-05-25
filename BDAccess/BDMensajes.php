@@ -2,7 +2,7 @@
 require('connectBD.php');
 
 class BDMensajes{
-    function getAllMensajes(){
+    function getAllMensajesGlobales(){
         $conn = conectarBD();
 
         if(!$conn){
@@ -10,7 +10,7 @@ class BDMensajes{
             return null;
         }
 
-        $sql = "SELECT * FROM mensajes ";     
+        $sql = "SELECT * FROM globales ";     
         $result = $conn->query($sql) or die ($conn->error);
         $lista[] = "";
         
@@ -32,12 +32,12 @@ class BDMensajes{
     * @param $email: es el email de usuario que vamos a registrar
     * @param $clave: clave del usuario que se va a registrar 
     */
-     function anadirMensaje($emisor,$receptor, $titulo, $asunto, $cuerpo){
+     function anadirMensajeGlobal($emisor, $titulo, $cuerpo){
         $conn = conectarBD();
 
         //Ponemos a NULL los campos que se introducen automáticamente al insertar en la bd, como el id o la fecha
-        $sql = "INSERT INTO mensajes (id, emisor, receptor, titulo, asunto, cuerpo, fecha)
-                VALUES (NULL,'$emisor','$receptor','$titulo', '$asunto','$cuerpo',NULL ) ";     
+        $sql = "INSERT INTO globales (id, emisor, titulo, cuerpo, fecha)
+                VALUES (NULL,'$emisor','$titulo','$cuerpo',NULL ) ";     
         $result = $conn->query($sql) or die ($conn->error);
 
         $conn->close();

@@ -6,29 +6,27 @@ require '/../BDAccess/BDMensajes.php';
 class ListaMensajes{
 
 
-    function getMensajes(){
+    function getMensajesGlobales(){
         
         $datosMensaje = new BDMensajes();
-        $mensaje = $datosMensaje->getAllMensajes();
+        $mensaje = $datosMensaje->getAllMensajesGlobales();
         $listaMensajes = null;
         if($mensaje){
             $listaMensajes = new ArrayObject();
             
             for($i = 0; $i < sizeof($mensaje); $i++){
                 $listaMensajes->append(
-                        new mensaje($mensaje[$i]['id'], $mensaje[$i]['emisor'], 
-                        $mensaje[$i]['receptor'], $mensaje[$i]['titulo'],
-                        $mensaje[$i]['asunto'], $mensaje[$i]['cuerpo'],
-                        $mensaje[$i]['fecha']));
+                        new mensaje($mensaje[$i]['id'], $mensaje[$i]['emisor'],NULL,
+                                    $mensaje[$i]['titulo'],$mensaje[$i]['cuerpo'],
+                                    $mensaje[$i]['fecha']));
             }
         }
-
-        return $listaMensajes;
+          return $listaMensajes;
     }
     
-    function nuevoMensaje($emisor, $receptor,$titulo, $asunto, $cuerpo){
+    function nuevoMensajeGlobal($emisor,$titulo,$cuerpo){
         $dbMensajes = new BDMensajes();
-        $dbMensajes->nuevoMensaje($emisor, $titulo, $asunto, $cuerpo);
+        $dbMensajes->anadirMensajeGlobal($emisor,$titulo, $cuerpo);
     }
     
 }

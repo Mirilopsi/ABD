@@ -6,6 +6,8 @@
     width: 60%;
     left: 20vw;
     z-index: 5;
+    visibility: hidden;
+    transition: visibility 0.5s;
 }
 
 .formulario form {

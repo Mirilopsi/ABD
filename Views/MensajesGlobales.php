@@ -29,28 +29,23 @@
         require_once('VistaMensajes.php');
     
         $mensajes = new VistaMensajes();
-        $mensajes->mostrarTodosMensajes();
+        $mensajes->mostrarMensajesGlobales();
     ?>
     
     <div id="nuevo-mensaje" class = "formulario">
         <form method="post" action="../GestionForms/gestionaNuevoMensaje.php">
-            <input type="hidden" name="tipoMensaje" value="global">
             <label for="titulo">titulo</label>
             <input type="text" name ="titulo" required>
-
-            <label for="asunto">asunto</label>
-            <input type="text" name ="asunto" required>
-
-            <label for="mensaje">mensaje</label>
-            <textarea name="message" cols="30" rows="10" -required></textarea>
+            <label for="cuerpo">mensaje</label>
+            <textarea name="cuerpo" cols="30" rows="10" required></textarea>
             <div class="botones-form">
                 <input type ="submit" name="submit" >
-                <button name="cancelar" >cancelar</button>
+                <button name="cancelar"  onclick="esconderFormNuevoMensaje()">cancelar</button>
             </div>
         </form>
     </div>
 
-    <button id="boton-nuevo"><label><img src="../Assets/img/ic_message_white_24px.svg"/>Nuevo</label></button>
+    <button id="boton-nuevo" onclick="mostrarFormNuevoMensaje()"><label><img src="../Assets/img/ic_message_white_24px.svg"/>Nuevo</label></button>
 
 </main>
 
@@ -58,4 +53,5 @@
     <?php include('Common/footer.html');?>
 </footer>
 
+<script src="../Scripts/showBox.js"></script>
 </body>
