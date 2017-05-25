@@ -4,7 +4,7 @@
 <head>
     <title>Mensajes Globales</title>
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" sizes="32x32" href="Assets/logo/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Assets/logo/favicon.png">
     <link href="../Styles/cabeceras.css" rel="stylesheet">
     <link href="../Styles/mensajeria.css" rel="stylesheet">
     <link href="../Styles/form.css" rel="stylesheet">
@@ -33,7 +33,8 @@
     ?>
     
     <div id="nuevo-mensaje" class = "formulario">
-        <form method="post" action="../GestionForms/FormNuevoMensaje.php">
+        <form method="post" action="../GestionForms/gestionaNuevoMensaje.php">
+            <input type="hidden" name="tipoMensaje" value="global">
             <label for="titulo">titulo</label>
             <input type="text" name ="titulo" required>
 

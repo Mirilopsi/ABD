@@ -4,10 +4,10 @@ require('../Models/ListaUsuarios.php');
 
 $nombreUsuario = $_POST['nombre'];
 $email = $_POST['email'];
-$pass = $_POST['clave'];
+$clave = $_POST['clave'];
 
 $listaUsuarios = new ListaUsuarios();
-$nuevoUsuario = $listaUsuarios->anadirNuevoUsuario($nombreUsuario, $email, $pass);
+$nuevoUsuario = $listaUsuarios->comprobarRegistroValido($nombreUsuario, $email, $clave);
 
 if($nuevoUsuario){
     $_SESSION['login']=true;

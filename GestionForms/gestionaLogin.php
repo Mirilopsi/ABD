@@ -9,23 +9,14 @@ $claveUsuario = $_POST['clave'];
 $listaUsuarios = new ListaUsuarios();
 
 // $usuario = $listaUsuarios->encontrarUsuarioPorEmailONombre($nombreUsuario);
-$usuario = $listaUsuarios->encontrarUsuarioPorNombre($nombreUsuario);
+$valido = $listaUsuarios->comprobarLoginValido($nombreUsuario, $claveUsuario);
 
-if($usuario){
-
-    // Encriptamos la contraseña introducida por el usuario para poder
-    // compararla con la contraseña cifrada de la bd
-
-    $claveEncriptar =  $nombreUsuario.'%$';
-
-    if(crypt($claveUsuario, $claveEncriptar) == $usuario->getClave()){
+if($valido){
         $_SESSION['login']=true;
         $_SESSION['usuario']=$nombreUsuario;
         header("Location: ../index.php");
         
-    }else{ 
-        echo 'contraseña incorrecta...'.crypt($claveUsuario, $claveEncriptar);
-    }
+
 }else{
     echo 'El usuario '.$nombreUsuario.' no existe.';
 }

@@ -37,12 +37,16 @@ class VistaMensajes{
 
     function mostrarTodosMensajes(){
         $mensajes = $this->ListaMensajes->getMensajes();
+        if($mensajes){
+            $iterator = $mensajes->getIterator();
 
-        $iterator = $mensajes->getIterator();
-
-        while($iterator->valid()){
-            $this->mostrarMensaje($iterator->current());
-            $iterator->next();
+            while($iterator->valid()){
+                $this->mostrarMensaje($iterator->current());
+                $iterator->next();
+            }
+        }
+        else{
+            echo '<p>Ahora mismo no hay ningún mensaje. Sé el primero en decir algo!</p>';
         }
 
     }

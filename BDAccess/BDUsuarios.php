@@ -21,8 +21,6 @@ class BDUsuarios{
                 $usuario = $fila;
             };
 
-        }else{
-            echo '0';
         }
         $conn->close();
 
@@ -30,16 +28,17 @@ class BDUsuarios{
     }
     
     
-    /**
+
+
+        /**
     * Se encarga de obtener un usuario mediante su nombre de la base de datos
     * @param $nombre: es el nombre de usuario que queremos obtener
-    * @param $columna: atributo por el que queremos encontrar al usuario (p.ej: nombre, email..)
     * @return $user: datos del usuario si se ha encontrado, cadena vacía en caso contrario
     **/
-    function getUsuarioPorAtributo($nombre, $columna){
+    function comprobarUsuarioExistente( $nombre){
         $conn = conectarBD();
 
-        $sql = "SELECT * FROM usuarios WHERE $columna = '$nombre'";     
+        $sql = "SELECT * FROM usuarios WHERE nombre = '$nombre' OR email = '$nombre'";     
         $resultado = $conn->query($sql) or die ($conn->error);
         $usuario = false;
         if ($resultado->num_rows > 0) {
@@ -48,15 +47,11 @@ class BDUsuarios{
                 $usuario = $fila;
             };
 
-        }else{
-            echo 'no encontrado<br>';
         }
         $conn->close();
 
         return $usuario;	
-    }
-
-    
+    }    
     
     
     /**
@@ -77,7 +72,6 @@ class BDUsuarios{
             };
 
         }else{
-            echo '0 results';
         }
         $conn->close();
 
@@ -86,8 +80,11 @@ class BDUsuarios{
 
 
     /**
-     * Se encarga de añadir un usuario a la bd
-     */
+    * Se encarga de añadir un usuario a la bd
+    * @param $nombre: es el nombre de usuario que vamos a registrar
+    * @param $email: es el email de usuario que vamos a registrar
+    * @param $clave: clave del usuario que se va a registrar 
+    */
      function anadirUsuario($nombre, $email, $clave){
         $conn = conectarBD();
 
